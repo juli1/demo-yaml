@@ -1,0 +1,24 @@
+rulesets:
+  - java-best-practices:
+    rules:
+      - avoid-printstacktrace:
+        only: 42
+        parameters:
+          - foo: bar
+          - bar: "baz"
+          - plop: 42
+      - loose-coupling:
+        parameters:
+          foo: bar
+      - one-declaration-per-line:
+        ignore:
+          - "**"
+    only:
+      - ""
+    ignore: {
+      foo: "bar"
+    }
+ignore:
+  - ""
+only:
+  - path2/path3

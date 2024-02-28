@@ -1,0 +1,4 @@
+ignore:
+  - path1/path2
+only:
+  - path2/path3

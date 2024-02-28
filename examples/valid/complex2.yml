@@ -1,0 +1,21 @@
+rulesets:
+  - python-best-practices
+  - java-best-practices:
+    rules:
+      - avoid-printstacktrace:
+        only:
+          - "foo/bar"
+        parameters:
+          foo: "bar"
+          bar: "baz"
+          plop: "42"
+      - loose-coupling:
+        parameters:
+          foo: bar
+      - one-declaration-per-line:
+        ignore:
+          - "**"
+ignore:
+  - path1/path2
+only:
+  - path2/path3

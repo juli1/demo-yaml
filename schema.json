@@ -5,19 +5,28 @@
     "rulesets": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ruleset"
+        "anyOf": [
+          {
+            "$ref": "#/definitions/ruleset"
+          },
+          {
+            "type": "string"
+          }
+        ]
       }
     },
     "ignore": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       }
     },
     "only": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       }
     }
   },
@@ -25,35 +34,9 @@
     "rulesets"
   ],
   "definitions": {
-    "ruleset": {
+    "rule": {
       "type": "object",
       "properties": {
-        "rules": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "ignore": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "only": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "parameters": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
         "ignore": {
           "type": "array",
           "items": {
@@ -64,6 +47,37 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ruleset": {
+      "type": "object",
+      "properties": {
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rule"
+          }
+        },
+        "ignore": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "only": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }

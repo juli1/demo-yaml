@@ -1,0 +1,10 @@
+rulesets:
+  - python-best-practices:
+    ignore: 42
+  - java-best-practices:
+    ignore:
+      - "bla"
+ignore:
+  - path1/path2
+only:
+  - path2/path3
