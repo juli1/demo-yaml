@@ -30,6 +30,12 @@
         "type": "string",
         "minLength": 1
       }
+    },
+    "ignore-gitignore": {
+      "type": "boolean"
+    },
+    "max-file-size-kb": {
+      "type": "number"
     }
   },
   "required": [
