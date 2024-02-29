@@ -10,10 +10,12 @@
             "$ref": "#/definitions/ruleset"
           },
           {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         ]
-      }
+      },
+      "minItems": 1
     },
     "ignore": {
       "type": "array",
@@ -52,7 +54,10 @@
         "parameters": {
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "types": [
+              "string",
+              "number"
+            ]
           }
         }
       }

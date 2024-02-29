@@ -8,7 +8,7 @@ rulesets:
         parameters:
           foo: "bar"
           bar: "baz"
-          plop: "42"
+          plop: 42
       - loose-coupling:
         parameters:
           foo: bar
